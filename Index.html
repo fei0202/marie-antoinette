@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>凡爾賽的代罪羔羊：瑪麗·安東尼</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            margin: 0;
+            font-family: 'Noto Serif TC', serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #faf8f5;
+        }
+        h1, h2, h3 { text-align: center; }
+        p { font-size: 1.1rem; max-width: 800px; margin: 0 auto 20px auto; text-align: justify; }
+        
+        
+        .section { padding: 100px 20px; }
+        
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://images.unsplash.com/photo-1600573472592-401b46901842?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: #2c3e50;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; color: #8e44ad; }
+        .hero p { font-size: 1.5rem; font-style: italic; }
+
+        /* 謠言區塊 (The Myth) - 陰暗色調 */
+        .myth { background-color: #2c3e50; color: #ecf0f1; }
+        .myth h2 { color: #e74c3c; font-size: 2.5rem; }
+        
+        /* 翻案區塊 (The Truth) - 明亮色調 */
+        .truth { background-color: #fff; }
+        .truth h2 { color: #27ae60; font-size: 2.5rem; }
+
+        /* 互動翻轉卡片 (假新聞對比) */
+        .card-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+        .flip-card { width: 300px; height: 250px; perspective: 1000px; cursor: pointer; }
+        .flip-card-inner { position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.8s; transform-style: preserve-3d; }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .flip-card-front, .flip-card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        .flip-card-front { background-color: #e74c3c; color: white; }
+        .flip-card-back { background-color: #27ae60; color: white; transform: rotateY(180deg); }
+
+        /* 結局區塊 (The End) - 莊重灰色調 */
+        .execution { background-color: #eceff1; color: #2c3e50; }
+        .execution blockquote { font-size: 1.5rem; font-style: italic; border-left: 5px solid #7f8c8d; padding-left: 20px; margin: 40px auto; max-width: 600px; color: #555; }
+
+        /* 頁尾 */
+        footer { text-align: center; padding: 20px; background-color: #333; color: white; font-size: 0.9rem; }
+
+        /* 滾動動畫效果 (預設隱藏，滑到時顯示) */
+        .reveal { opacity: 0; transform: translateY(50px); transition: all 1s ease-in-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <header class="hero section">
+        <h1>凡爾賽的代罪羔羊</h1>
+        <p>瑪麗·安東尼的真實與虛擬</p>
+        <p style="font-size: 1rem; margin-top: 20px;">往下捲動，揭開兩百年的歷史謊言 ↓</p>
+    </header>
+
+    <section class="myth section reveal">
+        <h2>既定印象：國家的財政黑洞</h2>
+        <p>在法國大革命前夕，巴黎街頭流傳著無數關於王后的色情小報與諷刺漫畫。她被描繪成極度奢侈、掏空國庫的「赤字夫人」。</p>
+        
+        <div class="card-container">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>假新聞 1</h3>
+                        <p>「如果沒有麵包，何不食蛋糕？」</p>
+                        <small>(滑鼠移入看真相)</small>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>翻案實情</h3>
+                        <p>這句話純屬杜撰！早在她來到法國前，這句話就已出現在盧梭的著作《懺悔錄》中，被硬塞到她嘴裡。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h3>假新聞 2</h3>
+                        <p>「王后的服裝與揮霍導致法國破產」</p>
+                        <small>(滑鼠移入看真相)</small>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>翻案實情</h3>
+                        <p>法國破產主因是支援「美國獨立戰爭」及長年的官僚腐敗。她其實是當時最熱衷慈善的王室成員之一。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="truth section reveal">
+        <h2>翻案實情：文化隔閡與時尚革命</h2>
+        <p>身為來自奧地利的外國公主，她在排外的法國宮廷中備受監視。為了逃避繁文縟節，她退居「小特里亞農宮」，過著嚮往大自然的鄉村生活。</p>
+        <p>在時尚上，她更帶起了一波「簡樸風」革命。她褪去沉重的法式宮廷禮服，改穿簡潔的白色亞麻裙（Chemise à la reine），卻被保守派批評為「穿著內衣見客」，再次成為眾矢之的。</p>
+    </section>
+
+    <section class="execution section reveal">
+        <h2>最後的尊嚴</h2>
+        <p>在恐怖統治時期，她被剝奪了一切，送上斷頭台。但在臨刑前，她沒有崩潰，而是表現出極大的堅韌與尊嚴。當她不小心踩到劊子手的腳時，留下了她人生最後一句話：</p>
+        <blockquote>
+            「先生，我請求您的原諒，我不是故意的。」<br>
+            <span style="font-size: 1rem;">(Monsieur, je vous demande pardon. Je ne l'ai pas fait exprès.)</span>
+        </blockquote>
+        <p>這句話，展現了她至死未變的貴族涵養與教養。</p>
+    </section>
+
+    <footer>
+        <p>本網頁由 [請填入你們的組名/班級] 製作團隊共同開發</p>
+        <p>組長：[姓名] | 歷史分析：[姓名] | 假新聞偵探：[姓名] | 時尚大使：[姓名] | 性格研究：[姓名] | 視覺設計：[姓名] | 影音QA：[姓名]</p>
+    </footer>
+
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
